@@ -1,690 +1,2639 @@
-/* ============================= */
+/* ========================================= */
+/* VARIABLES */
+/* ========================================= */
+
+:root {
+
+    --background: #f5f2eb;
+
+    --paper: #faf8f3;
+
+    --white: #ffffff;
+
+    --dark: #1f211e;
+
+    --green: #4e5547;
+
+    --light-green: #737b6c;
+
+    --beige: #d9d0c0;
+
+    --sand: #c2ae8d;
+
+    --gray: #716e67;
+
+    --line: rgba(31, 33, 30, 0.15);
+
+}
+
+
+/* ========================================= */
 /* GENERAL */
-/* ============================= */
+/* ========================================= */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
+
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f5f0;
-    color: #222;
+
+    background: var(--background);
+
+    color: var(--dark);
+
+    font-family: "DM Sans", sans-serif;
+
+    font-weight: 300;
+
+    overflow-x: hidden;
+
 }
 
 
-/* ============================= */
-/* MENÚ */
-/* ============================= */
+body.menu-open {
+
+    overflow: hidden;
+
+}
+
+
+img {
+
+    display: block;
+
+    width: 100%;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+button {
+
+    font: inherit;
+
+}
+
+
+::selection {
+
+    background: var(--green);
+
+    color: white;
+
+}
+
+
+/* ========================================= */
+/* TIPOGRAFÍA */
+/* ========================================= */
+
+h1,
+h2,
+h3 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-weight: 500;
+
+}
+
+
+em {
+
+    font-weight: 400;
+
+}
+
+
+.subtitulo {
+
+    margin-bottom: 25px;
+
+    color: var(--light-green);
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* ========================================= */
+/* HEADER */
+/* ========================================= */
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
-    padding: 25px 8%;
+    width: 100%;
 
-    background-color: white;
+    height: 88px;
 
-    position: sticky;
+    padding: 0 6%;
+
+    position: fixed;
+
     top: 0;
+
+    left: 0;
+
     z-index: 1000;
 
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-
-    transition: 0.3s;
-}
-
-header h1 {
-    font-size: 24px;
-    letter-spacing: 4px;
-}
-
-nav {
     display: flex;
-    gap: 30px;
-}
 
-nav a {
-    text-decoration: none;
-    color: #222;
-    font-size: 15px;
-
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #9b7b55;
-}
-
-
-/* ============================= */
-/* PORTADA */
-/* ============================= */
-
-#inicio {
-    height: 85vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 
-    text-align: center;
+    justify-content: space-between;
 
-    padding: 20px;
+    color: white;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        height 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+header.scrolled {
+
+    height: 72px;
+
+    background: rgba(250, 248, 243, 0.95);
+
+    color: var(--dark);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 1px 0 rgba(31, 33, 30, 0.1);
+
+}
+
+
+.logo {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
+
+}
+
+
+nav a {
+
+    position: relative;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+
+}
+
+
+nav a:not(.nav-reservar)::after {
+
+    content: "";
+
+    width: 0;
+
+    height: 1px;
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -7px;
+
+    background: currentColor;
+
+    transition: width 0.3s ease;
+
+}
+
+
+nav a:hover::after {
+
+    width: 100%;
+
+}
+
+
+.nav-reservar {
+
+    padding: 12px 20px;
+
+    border: 1px solid currentColor;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+}
+
+
+header:not(.scrolled) .nav-reservar:hover {
+
+    background: white;
+
+    color: var(--dark);
+
+}
+
+
+header.scrolled .nav-reservar:hover {
+
+    background: var(--dark);
+
+    color: white;
+
+}
+
+
+/* ========================================= */
+/* MENÚ CELULAR */
+/* ========================================= */
+
+.menu-button {
+
+    width: 34px;
+
+    height: 34px;
+
+    display: none;
+
+    position: relative;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+}
+
+
+.menu-button span {
+
+    width: 25px;
+
+    height: 1px;
+
+    position: absolute;
+
+    left: 4px;
+
+    background: currentColor;
+
+    transition: 0.3s;
+
+}
+
+
+.menu-button span:first-child {
+
+    top: 12px;
+
+}
+
+
+.menu-button span:last-child {
+
+    top: 21px;
+
+}
+
+
+.menu-button.active span:first-child {
+
+    top: 17px;
+
+    transform: rotate(45deg);
+
+}
+
+
+.menu-button.active span:last-child {
+
+    top: 17px;
+
+    transform: rotate(-45deg);
+
+}
+
+
+/* ========================================= */
+/* HERO */
+/* ========================================= */
+
+.hero {
+
+    min-height: 100vh;
+
+    padding: 150px 7% 55px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+
+    color: white;
 
     background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.35)
-        ),
         url("./images/portada.jpg");
 
     background-size: cover;
+
     background-position: center;
-    background-repeat: no-repeat;
 
-    color: white;
-}
-
-#inicio h2 {
-    font-size: 60px;
-    margin-bottom: 15px;
-}
-
-#inicio p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-#inicio a {
-    display: inline-block;
-
-    background-color: white;
-    color: #222;
-
-    padding: 15px 30px;
-
-    text-decoration: none;
-
-    border-radius: 4px;
-
-    transition: 0.3s;
-}
-
-#inicio a:hover {
-    background-color: #9b7b55;
-    color: white;
-
-    transform: translateY(-3px);
 }
 
 
-/* ============================= */
-/* SUBTÍTULOS */
-/* ============================= */
+.hero-overlay {
 
-.subtitulo {
-    font-size: 13px;
+    position: absolute;
 
-    letter-spacing: 5px;
+    inset: 0;
 
-    color: #9b7b55;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 19, 15, 0.65) 0%,
+            rgba(16, 19, 15, 0.3) 48%,
+            rgba(16, 19, 15, 0.08) 100%
+        );
 
-    margin-bottom: 20px;
 }
 
 
-/* ============================= */
-/* HABITACIONES */
-/* ============================= */
+.hero-content {
 
-#habitaciones {
-    padding: 110px 8%;
-
-    text-align: center;
-
-    background-color: #f7f5f0;
-}
-
-#habitaciones h2 {
-    font-size: 44px;
-
-    margin-bottom: 50px;
-}
-
-.habitaciones-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 30px;
-
-    max-width: 1200px;
-
-    margin: auto;
-}
-
-.habitacion-card {
-    background-color: white;
-
-    border-radius: 10px;
-
-    overflow: hidden;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
-
-    transition: 0.3s;
-}
-
-.habitacion-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.habitacion-card img {
     width: 100%;
 
-    height: 260px;
+    max-width: 1000px;
 
-    object-fit: cover;
+    position: relative;
+
+    z-index: 2;
+
+    padding-bottom: 70px;
+
+}
+
+
+.hero-eyebrow {
+
+    margin-bottom: 25px;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 4px;
+
+}
+
+
+.hero h1 {
+
+    max-width: 850px;
+
+    font-size: clamp(75px, 10vw, 145px);
+
+    line-height: 0.73;
+
+    letter-spacing: -3px;
+
+}
+
+
+.hero h1 em {
 
     display: block;
-}
 
-.habitacion-info {
-    padding: 30px;
-}
+    margin-left: 8%;
 
-.habitacion-info h3 {
-    font-size: 24px;
+    font-style: italic;
 
-    margin-bottom: 12px;
-}
-
-.habitacion-info p {
-    color: #666;
-
-    line-height: 1.6;
 }
 
 
-/* ============================= */
-/* NOSOTROS */
-/* ============================= */
+.hero-description {
 
-#nosotros {
-    background-color: #252525;
+    max-width: 450px;
 
-    color: white;
+    margin-top: 45px;
 
-    padding: 120px 8%;
-}
-
-.nosotros-contenido {
-    max-width: 1100px;
-
-    margin: auto;
-
-    text-align: center;
-}
-
-#nosotros .subtitulo {
-    color: #b99a72;
-}
-
-#nosotros h2 {
-    font-size: 52px;
-
-    margin-bottom: 35px;
-}
-
-#nosotros .descripcion {
-    max-width: 750px;
-
-    margin: 0 auto 20px;
-
-    font-size: 18px;
+    font-size: 15px;
 
     line-height: 1.8;
 
-    color: #d5d5d5;
+    color: rgba(255,255,255,0.85);
+
 }
 
-.experiencias {
+
+.hero-buttons {
+
+    margin-top: 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+}
+
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 16px 25px;
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s;
+
+}
+
+
+.button-light {
+
+    background: white;
+
+    color: var(--dark);
+
+}
+
+
+.button-light:hover {
+
+    background: var(--beige);
+
+}
+
+
+.button-dark {
+
+    background: var(--dark);
+
+    color: white;
+
+}
+
+
+.button-dark:hover {
+
+    background: var(--green);
+
+}
+
+
+.hero-link {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 11px;
+
+}
+
+
+.hero-link span {
+
+    width: 35px;
+
+    height: 35px;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: 0.3s;
+
+}
+
+
+.hero-link:hover span {
+
+    background: white;
+
+    color: var(--dark);
+
+}
+
+
+.hero-bottom {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 7%;
+
+    right: 7%;
+
+    bottom: 28px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 8px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+
+}
+
+
+.hero-scroll {
+
+    opacity: 0.8;
+
+}
+
+
+/* ========================================= */
+/* QUICK INFO */
+/* ========================================= */
+
+.quick-info {
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 0 7%;
+
+    background: var(--paper);
+
+}
+
+
+.quick-item {
+
+    min-height: 120px;
+
+    padding: 35px 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.quick-item:not(:last-child) {
+
+    border-right: 1px solid var(--line);
+
+}
+
+
+.quick-item span {
+
+    color: var(--light-green);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.quick-item p {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 21px;
+
+}
+
+
+/* ========================================= */
+/* INTRO */
+/* ========================================= */
+
+.intro {
+
+    padding: 150px 8%;
+
+    display: grid;
+
+    grid-template-columns: 0.35fr 1.65fr;
+
+    background: var(--paper);
+
+}
+
+
+.intro-content h2 {
+
+    max-width: 850px;
+
+    font-size: clamp(60px, 7vw, 100px);
+
+    line-height: 0.9;
+
+}
+
+
+.intro-content h2 em {
+
+    display: block;
+
+    margin-left: 15%;
+
+    color: var(--green);
+
+}
+
+
+.intro-text {
+
+    max-width: 750px;
+
+    margin-top: 60px;
+
+    margin-left: 15%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
 
     gap: 50px;
 
-    margin-top: 80px;
 }
 
-.experiencias div {
-    padding: 20px;
+
+.intro-text p {
+
+    color: var(--gray);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
 }
 
-.experiencias span {
+
+/* ========================================= */
+/* HABITACIONES */
+/* ========================================= */
+
+.habitaciones {
+
+    padding: 140px 7%;
+
+}
+
+
+.section-header {
+
+    margin-bottom: 70px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+}
+
+
+.section-header h2 {
+
+    font-size: clamp(60px, 7vw, 95px);
+
+    line-height: 0.85;
+
+}
+
+
+.section-header h2 em {
+
     display: block;
 
-    font-size: 13px;
+    color: var(--green);
 
-    color: #b99a72;
-
-    margin-bottom: 15px;
-}
-
-.experiencias h3 {
-    font-size: 22px;
-
-    margin-bottom: 15px;
-}
-
-.experiencias p {
-    color: #aaa;
-
-    line-height: 1.7;
-
-    font-size: 15px;
 }
 
 
-/* ============================= */
-/* UBICACIÓN */
-/* ============================= */
+.section-description {
 
-#ubicacion {
-    padding: 120px 8%;
+    max-width: 350px;
 
-    background-color: #ebe6dd;
+    color: var(--gray);
 
-    text-align: center;
-}
-
-.ubicacion-contenido {
-    max-width: 1000px;
-
-    margin: auto;
-}
-
-#ubicacion h2 {
-    font-size: 48px;
-
-    margin-bottom: 25px;
-}
-
-.ubicacion-texto {
-    font-size: 18px;
+    font-size: 14px;
 
     line-height: 1.8;
 
-    color: #555;
-
-    max-width: 700px;
-
-    margin: 0 auto 50px;
 }
 
 
-/* MAPA */
+.rooms-layout {
 
-.mapa-contenedor {
-    width: 100%;
+    display: grid;
 
-    margin-bottom: 35px;
+    grid-template-columns: 1.15fr 0.85fr;
 
-    border-radius: 10px;
+    gap: 25px;
+
+}
+
+
+.secondary-rooms {
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+}
+
+
+.room {
+
+    min-width: 0;
+
+}
+
+
+.room-image {
+
+    position: relative;
 
     overflow: hidden;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
 }
 
-.mapa-contenedor iframe {
-    display: block;
+
+.room-main .room-image {
+
+    height: 730px;
+
+}
+
+
+.secondary-rooms .room-image {
+
+    height: 310px;
+
+}
+
+
+.room-image img {
 
     width: 100%;
 
-    height: 450px;
+    height: 100%;
 
-    border: 0;
+    object-fit: cover;
+
+    transition: transform 0.8s ease;
+
 }
 
 
-/* DIRECCIÓN */
+.room:hover .room-image img {
 
-.direccion-box {
-    background-color: white;
+    transform: scale(1.035);
 
-    padding: 45px;
-
-    border-radius: 10px;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-.direccion-box h3 {
-    font-size: 24px;
 
-    margin-bottom: 20px;
+.room-number {
+
+    width: 38px;
+
+    height: 38px;
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(250,248,243,0.9);
+
+    color: var(--dark);
+
+    border-radius: 50%;
+
+    font-size: 9px;
+
 }
 
-.direccion-box p {
-    margin: 8px 0;
 
-    color: #666;
+.room-information {
+
+    padding: 22px 0;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-bottom: 1px solid var(--line);
+
 }
 
-.direccion-box a {
-    display: inline-block;
 
-    margin-top: 25px;
+.room-category {
 
-    padding: 14px 28px;
+    margin-bottom: 6px;
 
-    background-color: #222;
+    color: var(--light-green);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.room-information h3 {
+
+    font-size: 34px;
+
+}
+
+
+.room-details {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    gap: 5px 14px;
+
+    color: var(--gray);
+
+    font-size: 10px;
+
+}
+
+
+/* ========================================= */
+/* EXPERIENCIA */
+/* ========================================= */
+
+.experiencia {
+
+    padding: 150px 8%;
+
+    background: var(--dark);
 
     color: white;
 
-    text-decoration: none;
-
-    border-radius: 4px;
-
-    transition: 0.3s;
-}
-
-.direccion-box a:hover {
-    background-color: #9b7b55;
-
-    transform: translateY(-3px);
 }
 
 
-/* ============================= */
-/* RESERVACIONES */
-/* ============================= */
+.experiencia .subtitulo {
 
-#reservar {
-    padding: 120px 8%;
+    color: var(--sand);
 
-    background-color: #f7f5f0;
-
-    text-align: center;
 }
 
-.reserva-contenido {
-    max-width: 1200px;
 
-    margin: auto;
+.experience-heading {
+
+    max-width: 850px;
+
 }
 
-#reservar h2 {
-    font-size: 50px;
 
-    margin-bottom: 20px;
+.experience-heading h2 {
+
+    font-size: clamp(65px, 8vw, 110px);
+
+    line-height: 0.85;
+
 }
 
-.reserva-texto {
-    font-size: 18px;
 
-    color: #666;
+.experience-heading h2 em {
 
-    max-width: 700px;
+    display: block;
 
-    line-height: 1.7;
+    margin-left: 10%;
 
-    margin: 0 auto 60px;
+    color: var(--sand);
+
 }
 
-.opciones-reserva {
+
+.experience-heading > p:last-child {
+
+    max-width: 500px;
+
+    margin-top: 45px;
+
+    margin-left: 10%;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 14px;
+
+    line-height: 1.9;
+
+}
+
+
+.experience-list {
+
+    margin-top: 110px;
+
+}
+
+
+.experience-item {
+
+    padding: 35px 0;
+
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 0.3fr 0.8fr 1fr;
 
-    gap: 30px;
+    align-items: center;
+
+    gap: 40px;
+
+    border-top: 1px solid rgba(255,255,255,0.18);
+
 }
 
-.reserva-card {
-    display: block;
 
-    text-align: left;
+.experience-item:last-child {
 
-    background-color: white;
+    border-bottom: 1px solid rgba(255,255,255,0.18);
 
-    padding: 40px;
-
-    border-radius: 10px;
-
-    text-decoration: none;
-
-    color: #222;
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-
-    transition: 0.3s;
 }
 
-.reserva-card:hover {
-    transform: translateY(-8px);
 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.13);
+.experience-number {
+
+    color: var(--sand);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
 }
 
-.reserva-card span {
-    display: block;
+
+.experience-item h3 {
+
+    font-size: 34px;
+
+}
+
+
+.experience-item p {
+
+    max-width: 450px;
+
+    color: rgba(255,255,255,0.55);
 
     font-size: 13px;
 
-    color: #9b7b55;
+    line-height: 1.8;
 
-    margin-bottom: 30px;
 }
 
-.reserva-card h3 {
-    font-size: 25px;
 
-    margin-bottom: 15px;
+/* ========================================= */
+/* GALERÍA */
+/* ========================================= */
+
+.galeria {
+
+    padding: 150px 7%;
+
+    background: var(--paper);
+
 }
 
-.reserva-card p {
-    color: #666;
 
-    line-height: 1.7;
+.gallery-heading {
 
-    margin-bottom: 30px;
+    margin-bottom: 80px;
+
 }
 
-.reserva-card strong {
+
+.gallery-heading h2 {
+
+    font-size: clamp(60px, 7vw, 95px);
+
+    line-height: 0.9;
+
+}
+
+
+.gallery-heading h2 em {
+
+    color: var(--green);
+
+}
+
+
+.gallery-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    grid-template-rows: auto auto;
+
+    gap: 25px;
+
+}
+
+
+.gallery-image {
+
+    overflow: hidden;
+
+}
+
+
+.gallery-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.8s ease;
+
+}
+
+
+.gallery-image:hover img {
+
+    transform: scale(1.035);
+
+}
+
+
+.gallery-one {
+
+    height: 700px;
+
+    grid-row: 1 / 3;
+
+}
+
+
+.gallery-two {
+
+    height: 330px;
+
+}
+
+
+.gallery-three {
+
+    height: 500px;
+
+    margin-top: 100px;
+
+}
+
+
+.gallery-quote {
+
+    min-height: 270px;
+
+    padding: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background: var(--beige);
+
+}
+
+
+.gallery-quote span {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 70px;
+
+    line-height: 0.5;
+
+    color: var(--green);
+
+}
+
+
+.gallery-quote p {
+
+    max-width: 400px;
+
+    margin-top: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+
+    line-height: 1.15;
+
+}
+
+
+/* ========================================= */
+/* UBICACIÓN */
+/* ========================================= */
+
+.ubicacion {
+
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    background: var(--background);
+
+}
+
+
+.location-info {
+
+    padding: 140px 10% 140px 14%;
+
+}
+
+
+.location-info h2 {
+
+    max-width: 600px;
+
+    font-size: clamp(55px, 6vw, 85px);
+
+    line-height: 0.9;
+
+}
+
+
+.location-info h2 em {
+
+    display: block;
+
+    color: var(--green);
+
+}
+
+
+.location-description {
+
+    max-width: 500px;
+
+    margin-top: 40px;
+
+    color: var(--gray);
+
     font-size: 14px;
 
-    color: #9b7b55;
+    line-height: 1.9;
+
 }
 
 
-/* ============================= */
-/* CONTACTO */
-/* ============================= */
+.location-details {
 
-#contacto {
-    text-align: center;
+    margin: 50px 0;
 
-    padding: 100px 8%;
-
-    background-color: white;
-}
-
-#contacto h2 {
-    font-size: 40px;
-
-    margin-bottom: 25px;
-}
-
-#contacto p {
-    margin: 10px;
-
-    font-size: 17px;
-
-    color: #555;
 }
 
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
+.location-details div {
 
-footer {
-    background-color: #111;
+    padding: 18px 0;
+
+    display: grid;
+
+    grid-template-columns: 50px 1fr;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.location-details div:last-child {
+
+    border-bottom: 1px solid var(--line);
+
+}
+
+
+.location-details span {
+
+    color: var(--light-green);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.location-details p {
+
+    font-size: 13px;
+
+}
+
+
+.location-map {
+
+    min-height: 750px;
+
+}
+
+
+.location-map iframe {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 750px;
+
+    display: block;
+
+    border: 0;
+
+    filter: grayscale(20%) saturate(70%);
+
+}
+
+
+/* ========================================= */
+/* RESERVACIONES */
+/* ========================================= */
+
+.reservar {
+
+    padding: 150px 8%;
+
+    background: var(--green);
 
     color: white;
 
+}
+
+
+.reservation-content {
+
+    max-width: 1000px;
+
+    margin: auto;
+
     text-align: center;
 
-    padding: 30px;
+}
+
+
+.reservar .subtitulo {
+
+    color: var(--sand);
+
+}
+
+
+.reservation-content h2 {
+
+    font-size: clamp(65px, 8vw, 110px);
+
+    line-height: 0.85;
+
+}
+
+
+.reservation-content h2 em {
+
+    display: block;
+
+    color: var(--beige);
+
+}
+
+
+.reservation-description {
+
+    max-width: 500px;
+
+    margin: 40px auto 55px;
+
+    color: rgba(255,255,255,0.7);
 
     font-size: 14px;
+
+    line-height: 1.8;
+
 }
 
 
-/* ============================= */
-/* EFECTOS JAVASCRIPT */
-/* ============================= */
+.reservation-main-button {
 
-header.scrolled {
-    padding-top: 15px;
+    max-width: 750px;
 
-    padding-bottom: 15px;
+    margin: auto;
 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    padding: 30px 35px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    text-align: left;
+
+    background: var(--paper);
+
+    color: var(--dark);
+
+    transition: 0.4s;
+
 }
 
-.animar {
+
+.reservation-main-button:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+.reservation-main-button div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.reservation-main-button div span {
+
+    color: var(--light-green);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.reservation-main-button strong {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+}
+
+
+.reservation-arrow {
+
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--line);
+
+    border-radius: 50%;
+
+    transition: 0.3s;
+
+}
+
+
+.reservation-main-button:hover .reservation-arrow {
+
+    background: var(--dark);
+
+    color: white;
+
+    transform: rotate(45deg);
+
+}
+
+
+.reservation-platforms {
+
+    margin-top: 45px;
+
+}
+
+
+.reservation-platforms p {
+
+    margin-bottom: 15px;
+
+    color: rgba(255,255,255,0.55);
+
+    font-size: 10px;
+
+}
+
+
+.reservation-platforms div {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+}
+
+
+.reservation-platforms a {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 20px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+
+}
+
+
+/* ========================================= */
+/* CONTACTO */
+/* ========================================= */
+
+.contacto {
+
+    padding: 140px 8%;
+
+    background: var(--paper);
+
+}
+
+
+.contact-heading {
+
+    max-width: 800px;
+
+}
+
+
+.contact-heading h2 {
+
+    font-size: clamp(65px, 8vw, 105px);
+
+    line-height: 0.85;
+
+}
+
+
+.contact-heading h2 em {
+
+    display: block;
+
+    margin-left: 15%;
+
+    color: var(--green);
+
+}
+
+
+.contact-information {
+
+    margin-top: 90px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+
+.contact-information > div {
+
+    min-height: 120px;
+
+    padding: 25px;
+
+    border-top: 1px solid var(--line);
+
+}
+
+
+.contact-information > div:not(:last-child) {
+
+    border-right: 1px solid var(--line);
+
+}
+
+
+.contact-information span {
+
+    display: block;
+
+    margin-bottom: 30px;
+
+    color: var(--light-green);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.contact-information p {
+
+    font-size: 13px;
+
+}
+
+
+/* ========================================= */
+/* FOOTER */
+/* ========================================= */
+
+footer {
+
+    padding: 80px 7% 30px;
+
+    background: #171916;
+
+    color: white;
+
+}
+
+
+.footer-top {
+
+    padding-bottom: 40px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+
+}
+
+
+.footer-logo {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 8vw, 105px);
+
+    line-height: 0.8;
+
+    letter-spacing: 3px;
+
+}
+
+
+.footer-top p {
+
+    color: rgba(255,255,255,0.5);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+.footer-grid {
+
+    padding: 70px 0;
+
+    display: grid;
+
+    grid-template-columns: 2fr 0.7fr 0.7fr;
+
+    gap: 70px;
+
+}
+
+
+.footer-message p {
+
+    max-width: 450px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    color: var(--beige);
+
+}
+
+
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+}
+
+
+.footer-column > span {
+
+    margin-bottom: 15px;
+
+    color: var(--sand);
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.footer-column a {
+
+    width: fit-content;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 12px;
+
+    transition: color 0.3s;
+
+}
+
+
+.footer-column a:hover {
+
+    color: white;
+
+}
+
+
+.footer-bottom {
+
+    padding-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    color: rgba(255,255,255,0.35);
+
+    font-size: 8px;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* ========================================= */
+/* ANIMACIONES */
+/* ========================================= */
+
+.reveal {
+
     opacity: 0;
 
-    transform: translateY(40px);
+    transform: translateY(45px);
 
     transition:
-        opacity 0.8s ease,
-        transform 0.8s ease;
+        opacity 0.9s ease,
+        transform 0.9s ease;
+
 }
 
-.animar.visible {
+
+.reveal.visible {
+
     opacity: 1;
 
     transform: translateY(0);
+
 }
 
 
-/* ============================= */
-/* CELULAR */
-/* ============================= */
+/* ========================================= */
+/* TABLET */
+/* ========================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
+
+
+    .menu-button {
+
+        display: block;
+
+    }
+
+
+    nav {
+
+        width: 100%;
+
+        height: 100vh;
+
+        padding: 120px 8% 50px;
+
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+
+        z-index: -1;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+
+        background: var(--paper);
+
+        color: var(--dark);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-20px);
+
+        transition: 0.35s;
+
+    }
+
+
+    nav.active {
+
+        opacity: 1;
+
+        visibility: visible;
+
+        transform: translateY(0);
+
+    }
+
+
+    nav a {
+
+        font-family: "Cormorant Garamond", serif;
+
+        font-size: 35px;
+
+        letter-spacing: 0;
+
+        text-transform: none;
+
+    }
+
+
+    .nav-reservar {
+
+        margin-top: 20px;
+
+        font-family: "DM Sans", sans-serif;
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+
+        text-transform: uppercase;
+
+    }
+
+
+    header.menu-active {
+
+        color: var(--dark);
+
+    }
+
+
+    .quick-info {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .quick-item:nth-child(2) {
+
+        border-right: none;
+
+    }
+
+
+    .intro {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .intro-label {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .intro-text {
+
+        margin-left: 0;
+
+    }
+
+
+    .rooms-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .room-main .room-image {
+
+        height: 600px;
+
+    }
+
+
+    .secondary-rooms {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .secondary-rooms .room-image {
+
+        height: 400px;
+
+    }
+
+
+    .experience-item {
+
+        grid-template-columns: 60px 1fr;
+
+    }
+
+
+    .experience-item p {
+
+        grid-column: 2;
+
+    }
+
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .gallery-one {
+
+        height: 550px;
+
+    }
+
+
+    .ubicacion {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .location-info {
+
+        padding: 120px 8%;
+
+    }
+
+
+    .location-map,
+    .location-map iframe {
+
+        min-height: 500px;
+
+    }
+
+
+    .contact-information {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+    .contact-information > div:nth-child(2) {
+
+        border-right: none;
+
+    }
+
+}
+
+
+/* ========================================= */
+/* CELULAR */
+/* ========================================= */
+
+@media (max-width: 600px) {
+
 
     header {
+
+        height: 70px;
+
+        padding: 0 6%;
+
+    }
+
+
+    header.scrolled {
+
+        height: 65px;
+
+    }
+
+
+    .logo {
+
+        font-size: 19px;
+
+        letter-spacing: 3px;
+
+    }
+
+
+    .hero {
+
+        min-height: 100svh;
+
+        padding: 120px 7% 45px;
+
+        background-position: 60% center;
+
+    }
+
+
+    .hero-overlay {
+
+        background:
+            linear-gradient(
+                0deg,
+                rgba(16,19,15,0.72),
+                rgba(16,19,15,0.15)
+            );
+
+    }
+
+
+    .hero-content {
+
+        padding-bottom: 100px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 67px;
+
+        line-height: 0.8;
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .hero h1 em {
+
+        margin-left: 0;
+
+    }
+
+
+    .hero-description {
+
+        max-width: 330px;
+
+        margin-top: 30px;
+
+    }
+
+
+    .hero-buttons {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .hero-bottom {
+
+        left: 7%;
+
+        right: 7%;
+
+    }
+
+
+    .hero-scroll {
+
+        display: none;
+
+    }
+
+
+    .quick-info {
+
+        grid-template-columns: 1fr 1fr;
+
+        padding: 0;
+
+    }
+
+
+    .quick-item {
+
+        min-height: 100px;
+
+        padding: 25px 20px;
+
+    }
+
+
+    .quick-item p {
+
+        font-size: 17px;
+
+    }
+
+
+    .intro {
+
+        padding: 100px 7%;
+
+    }
+
+
+    .intro-content h2 {
+
+        font-size: 57px;
+
+    }
+
+
+    .intro-content h2 em {
+
+        margin-left: 0;
+
+    }
+
+
+    .intro-text {
+
+        margin-top: 45px;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .habitaciones {
+
+        padding: 100px 7%;
+
+    }
+
+
+    .section-header {
+
+        margin-bottom: 50px;
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 25px;
+
+    }
+
+
+    .section-header h2 {
+
+        font-size: 57px;
+
+    }
+
+
+    .room-main .room-image,
+    .secondary-rooms .room-image {
+
+        height: 430px;
+
+    }
+
+
+    .secondary-rooms {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .room-information {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .room-details {
+
+        justify-content: flex-start;
+
+    }
+
+
+    .experiencia {
+
+        padding: 100px 7%;
+
+    }
+
+
+    .experience-heading h2 {
+
+        font-size: 62px;
+
+    }
+
+
+    .experience-heading h2 em {
+
+        margin-left: 0;
+
+    }
+
+
+    .experience-heading > p:last-child {
+
+        margin-left: 0;
+
+    }
+
+
+    .experience-list {
+
+        margin-top: 70px;
+
+    }
+
+
+    .experience-item {
+
+        padding: 30px 0;
+
+        grid-template-columns: 45px 1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .experience-item h3 {
+
+        font-size: 27px;
+
+    }
+
+
+    .galeria {
+
+        padding: 100px 7%;
+
+    }
+
+
+    .gallery-heading h2 {
+
+        font-size: 55px;
+
+    }
+
+
+    .gallery-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .gallery-one {
+
+        height: 500px;
+
+        grid-row: auto;
+
+    }
+
+
+    .gallery-two {
+
+        height: 380px;
+
+    }
+
+
+    .gallery-three {
+
+        height: 500px;
+
+        margin-top: 0;
+
+    }
+
+
+    .gallery-quote {
+
+        min-height: 230px;
+
+        padding: 35px;
+
+    }
+
+
+    .gallery-quote p {
+
+        font-size: 28px;
+
+    }
+
+
+    .location-info {
+
+        padding: 100px 7%;
+
+    }
+
+
+    .location-info h2 {
+
+        font-size: 55px;
+
+    }
+
+
+    .location-map,
+    .location-map iframe {
+
+        min-height: 420px;
+
+    }
+
+
+    .reservar {
+
+        padding: 100px 7%;
+
+    }
+
+
+    .reservation-content h2 {
+
+        font-size: 59px;
+
+    }
+
+
+    .reservation-main-button {
+
+        padding: 25px;
+
+    }
+
+
+    .reservation-main-button strong {
+
+        font-size: 21px;
+
+    }
+
+
+    .contacto {
+
+        padding: 100px 7%;
+
+    }
+
+
+    .contact-heading h2 {
+
+        font-size: 60px;
+
+    }
+
+
+    .contact-heading h2 em {
+
+        margin-left: 0;
+
+    }
+
+
+    .contact-information {
+
+        margin-top: 60px;
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .contact-information > div {
+
+        min-height: auto;
+
+        padding: 25px 0;
+
+        border-right: none !important;
+
+    }
+
+
+    .contact-information span {
+
+        margin-bottom: 12px;
+
+    }
+
+
+    footer {
+
+        padding: 70px 7% 25px;
+
+    }
+
+
+    .footer-top {
+
+        align-items: flex-start;
+
         flex-direction: column;
 
         gap: 20px;
 
-        padding: 20px;
     }
 
-    nav {
-        gap: 15px;
 
-        flex-wrap: wrap;
+    .footer-logo {
 
-        justify-content: center;
+        font-size: 55px;
+
     }
 
-    #inicio {
-        height: 75vh;
+
+    .footer-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 50px 25px;
+
     }
 
-    #inicio h2 {
-        font-size: 40px;
+
+    .footer-message {
+
+        grid-column: 1 / -1;
+
     }
 
-    #inicio p {
-        font-size: 17px;
+
+    .footer-message p {
+
+        font-size: 35px;
+
     }
 
-    #habitaciones {
-        padding: 70px 6%;
+
+    .footer-bottom {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+
     }
 
-    #habitaciones h2 {
-        font-size: 32px;
+}
+/* ========================================= */
+/* WHATSAPP */
+/* ========================================= */
+
+.whatsapp-button-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 18px !important;
+}
+
+.whatsapp-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #25D366;
+    color: white;
+
+    border-radius: 50%;
+}
+
+.whatsapp-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.whatsapp-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 7px !important;
+}
+
+.whatsapp-text span {
+    color: var(--light-green);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.whatsapp-text strong {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 500;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .whatsapp-icon {
+        width: 44px;
+        height: 44px;
     }
 
-    .habitaciones-grid {
-        grid-template-columns: 1fr;
-
-        gap: 25px;
+    .whatsapp-icon svg {
+        width: 24px;
+        height: 24px;
     }
 
-    .habitacion-card img {
-        height: 230px;
+    .whatsapp-button-content {
+        gap: 13px !important;
     }
 
-    #nosotros {
-        padding: 80px 10%;
-    }
-
-    #nosotros h2 {
-        font-size: 36px;
-    }
-
-    .experiencias {
-        grid-template-columns: 1fr;
-
-        gap: 30px;
-
-        margin-top: 50px;
-    }
-
-    #ubicacion {
-        padding: 80px 8%;
-    }
-
-    #ubicacion h2 {
-        font-size: 36px;
-    }
-
-    .mapa-contenedor iframe {
-        height: 320px;
-    }
-
-    .direccion-box {
-        padding: 30px 20px;
-    }
-
-    #reservar {
-        padding: 80px 8%;
-    }
-
-    #reservar h2 {
-        font-size: 36px;
-    }
-
-    .opciones-reserva {
-        grid-template-columns: 1fr;
-    }
-
-    #contacto {
-        padding: 80px 8%;
-    }
-
-    #contacto h2 {
-        font-size: 34px;
+    .whatsapp-text strong {
+        font-size: 19px;
     }
 
 }
