@@ -3,353 +3,1009 @@
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Casa Luna Boutique Hotel. Una estancia entre viñedos, naturaleza y tranquilidad en Querétaro."
+    >
 
     <title>Casa Luna | Boutique Hotel</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
 </head>
+
 
 <body>
 
-    <header>
-        <h1>CASA LUNA</h1>
 
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#habitaciones">Habitaciones</a>
-            <a href="#nosotros">Experiencia</a>
-            <a href="#ubicacion">Ubicación</a>
-            <a href="#reservar">Reservar</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+<!-- ========================================= -->
+<!-- HEADER -->
+<!-- ========================================= -->
 
+<header id="header">
 
-    <main>
+    <a href="#inicio" class="logo">
+        CASA LUNA
+    </a>
 
-        <!-- PORTADA -->
 
-        <section id="inicio">
+    <nav id="nav">
 
-            <h2>Casa Luna Boutique Hotel</h2>
+        <a href="#habitaciones">
+            Habitaciones
+        </a>
 
-            <p>
-                Desconecta entre viñedos en Querétaro.
-            </p>
+        <a href="#experiencia">
+            Experiencia
+        </a>
 
-            <a href="#habitaciones">Descubrir Casa Luna</a>
+        <a href="#galeria">
+            Galería
+        </a>
 
-        </section>
+        <a href="#ubicacion">
+            Ubicación
+        </a>
 
+        <a href="#contacto">
+            Contacto
+        </a>
 
-        <!-- HABITACIONES -->
+        <a href="#reservar" class="nav-reservar">
+            Reservar
+        </a>
 
-        <section id="habitaciones">
+    </nav>
 
-            <p class="subtitulo">HABITACIONES</p>
 
-            <h2>Descansa diferente</h2>
+    <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Abrir menú"
+    >
+        <span></span>
+        <span></span>
+    </button>
 
-            <div class="habitaciones-grid">
+</header>
 
-                <div class="habitacion-card">
 
-                    <img src="images/suite-luna.jpg" alt="Suite Luna">
 
-                    <div class="habitacion-info">
+<main>
 
-                        <h3>Suite Luna</h3>
 
-                        <p>
-                            Cama king size, terraza privada
-                            y desayuno incluido.
-                        </p>
+<!-- ========================================= -->
+<!-- PORTADA -->
+<!-- ========================================= -->
 
-                    </div>
+<section id="inicio" class="hero">
 
-                </div>
+    <div class="hero-overlay"></div>
 
 
-                <div class="habitacion-card">
+    <div class="hero-content">
 
-                    <img src="images/suite-jardin.jpg" alt="Suite Jardín">
-
-                    <div class="habitacion-info">
-
-                        <h3>Suite Jardín</h3>
-
-                        <p>
-                            Una habitación tranquila
-                            con vista a los jardines.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="habitacion-card">
-
-                    <img src="images/suite-premium.jpg" alt="Suite Premium">
-
-                    <div class="habitacion-info">
-
-                        <h3>Suite Premium</h3>
-
-                        <p>
-                            Nuestra experiencia más exclusiva
-                            rodeada de naturaleza.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- EXPERIENCIA -->
-
-        <section id="nosotros">
-
-            <div class="nosotros-contenido">
-
-                <p class="subtitulo">CASA LUNA</p>
-
-                <h2>Una estancia para recordar</h2>
-
-                <p class="descripcion">
-                    Rodeado de viñedos y paisajes únicos de Querétaro,
-                    Casa Luna nace como un refugio para desconectarse del ritmo
-                    cotidiano y disfrutar de la tranquilidad, el vino y la naturaleza.
-                </p>
-
-                <p class="descripcion">
-                    Cada espacio ha sido diseñado para ofrecer una experiencia
-                    íntima y relajada, combinando arquitectura contemporánea,
-                    hospitalidad y el carácter de la región vinícola queretana.
-                </p>
-
-
-                <div class="experiencias">
-
-                    <div>
-
-                        <span>01</span>
-
-                        <h3>Entre viñedos</h3>
-
-                        <p>
-                            Despierta rodeado de paisajes,
-                            naturaleza y los viñedos de Querétaro.
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>02</span>
-
-                        <h3>Sabores locales</h3>
-
-                        <p>
-                            Descubre vinos, quesos y gastronomía
-                            inspirada en los sabores de nuestra región.
-                        </p>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>03</span>
-
-                        <h3>Desconecta</h3>
-
-                        <p>
-                            Un espacio pensado para bajar el ritmo,
-                            descansar y disfrutar el momento.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- UBICACIÓN -->
-
-        <section id="ubicacion">
-
-            <div class="ubicacion-contenido">
-
-                <p class="subtitulo">UBICACIÓN</p>
-
-                <h2>En el corazón de la ruta del vino</h2>
-
-                <p class="ubicacion-texto">
-                    Casa Luna se encuentra rodeada de viñedos,
-                    paisajes abiertos y algunos de los destinos
-                    gastronómicos más especiales de Querétaro.
-                </p>
-
-
-                <div class="mapa-contenedor">
-
-                    <iframe
-                        src="https://www.google.com/maps?q=Tequisquiapan%20Queretaro&output=embed"
-                        width="100%"
-                        height="450"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-
-                </div>
-
-
-                <div class="direccion-box">
-
-                    <h3>Casa Luna Boutique Hotel</h3>
-
-                    <p>Ruta del Vino, Querétaro, México</p>
-
-                    <p>A 20 min de Tequisquiapan</p>
-
-                    <p>A pocos minutos de viñedos y queserías</p>
-
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=Tequisquiapan+Queretaro"
-                        target="_blank">
-                        Abrir en Google Maps
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- RESERVACIONES -->
-
-        <section id="reservar">
-
-            <div class="reserva-contenido">
-
-                <p class="subtitulo">RESERVACIONES</p>
-
-                <h2>Reserva tu estancia</h2>
-
-                <p class="reserva-texto">
-                    Elige la opción que prefieras para consultar
-                    disponibilidad y reservar tu próxima estancia
-                    en Casa Luna.
-                </p>
-
-
-                <div class="opciones-reserva">
-
-                    <a
-                        href="https://www.booking.com/"
-                        target="_blank"
-                        class="reserva-card">
-
-                        <span>01</span>
-
-                        <h3>Booking</h3>
-
-                        <p>
-                            Consulta disponibilidad, precios
-                            y reserva a través de Booking.
-                        </p>
-
-                        <strong>Reservar en Booking →</strong>
-
-                    </a>
-
-
-                    <a
-                        href="https://www.airbnb.com/"
-                        target="_blank"
-                        class="reserva-card">
-
-                        <span>02</span>
-
-                        <h3>Airbnb</h3>
-
-                        <p>
-                            Encuentra nuestra propiedad
-                            y realiza tu reservación desde Airbnb.
-                        </p>
-
-                        <strong>Reservar en Airbnb →</strong>
-
-                    </a>
-
-
-                    <a
-                        href="https://wa.me/524420000000"
-                        target="_blank"
-                        class="reserva-card">
-
-                        <span>03</span>
-
-                        <h3>Reserva directa</h3>
-
-                        <p>
-                            Habla directamente con nosotros
-                            para consultar fechas, tarifas y disponibilidad.
-                        </p>
-
-                        <strong>Contactar por WhatsApp →</strong>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTACTO -->
-
-        <section id="contacto">
-
-            <p class="subtitulo">CONTACTO</p>
-
-            <h2>¿Listo para desconectar?</h2>
-
-            <p>Querétaro, México</p>
-
-            <p>+52 442 000 0000</p>
-
-            <p>reservaciones@casaluna.com</p>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-
-        <p>
-            © 2026 Casa Luna Boutique Hotel
+        <p class="hero-eyebrow">
+            BOUTIQUE HOTEL · QUERÉTARO
         </p>
 
-    </footer>
+
+        <h1>
+            Desconecta
+            <em>entre viñedos.</em>
+        </h1>
 
 
-    <script src="script.js"></script>
+        <p class="hero-description">
+            Una estancia íntima entre naturaleza,
+            vino y tranquilidad en el corazón
+            de Querétaro.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#habitaciones"
+                class="button button-light"
+            >
+                Descubrir Casa Luna
+            </a>
+
+
+            <a
+                href="#reservar"
+                class="hero-link"
+            >
+                Reservar estancia
+
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-bottom">
+
+        <span>
+            20.5222° N
+        </span>
+
+        <span class="hero-scroll">
+            DESCUBRE
+            ↓
+        </span>
+
+        <span>
+            QUERÉTARO · MX
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================= -->
+<!-- DATOS RÁPIDOS -->
+<!-- ========================================= -->
+
+<section class="quick-info">
+
+    <div class="quick-item">
+
+        <span>01</span>
+
+        <p>
+            Boutique Hotel
+        </p>
+
+    </div>
+
+
+    <div class="quick-item">
+
+        <span>02</span>
+
+        <p>
+            Entre viñedos
+        </p>
+
+    </div>
+
+
+    <div class="quick-item">
+
+        <span>03</span>
+
+        <p>
+            Querétaro, México
+        </p>
+
+    </div>
+
+
+    <div class="quick-item">
+
+        <span>04</span>
+
+        <p>
+            Reserva directa
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================= -->
+<!-- INTRODUCCIÓN -->
+<!-- ========================================= -->
+
+<section class="intro">
+
+    <div class="intro-label reveal">
+
+        <p class="subtitulo">
+            CASA LUNA
+        </p>
+
+    </div>
+
+
+    <div class="intro-content reveal">
+
+        <h2>
+            Un refugio para
+            <em>bajar el ritmo.</em>
+        </h2>
+
+
+        <div class="intro-text">
+
+            <p>
+                Rodeado de viñedos y paisajes abiertos,
+                Casa Luna es un espacio pensado para
+                alejarse del ritmo cotidiano.
+            </p>
+
+
+            <p>
+                Arquitectura, naturaleza y hospitalidad
+                se encuentran para crear una estancia
+                sencilla, íntima y memorable.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================= -->
+<!-- HABITACIONES -->
+<!-- ========================================= -->
+
+<section id="habitaciones" class="habitaciones">
+
+    <div class="section-header reveal">
+
+        <div>
+
+            <p class="subtitulo">
+                HABITACIONES
+            </p>
+
+            <h2>
+                Descansa
+                <em>diferente.</em>
+            </h2>
+
+        </div>
+
+
+        <p class="section-description">
+            Tres espacios creados para disfrutar
+            del silencio, la naturaleza y el descanso.
+        </p>
+
+    </div>
+
+
+
+    <div class="rooms-layout">
+
+
+        <!-- SUITE LUNA -->
+
+        <article class="room room-main reveal">
+
+            <div class="room-image">
+
+                <img
+                    src="images/suite-luna.jpg"
+                    alt="Suite Luna de Casa Luna"
+                >
+
+                <span class="room-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <div class="room-information">
+
+                <div>
+
+                    <p class="room-category">
+                        SUITE
+                    </p>
+
+                    <h3>
+                        Suite Luna
+                    </h3>
+
+                </div>
+
+
+                <div class="room-details">
+
+                    <span>King size</span>
+                    <span>Terraza privada</span>
+                    <span>Desayuno incluido</span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- HABITACIONES SECUNDARIAS -->
+
+        <div class="secondary-rooms">
+
+
+            <!-- SUITE JARDÍN -->
+
+            <article class="room reveal">
+
+                <div class="room-image">
+
+                    <img
+                        src="images/suite-jardin.jpg"
+                        alt="Suite Jardín de Casa Luna"
+                    >
+
+                    <span class="room-number">
+                        02
+                    </span>
+
+                </div>
+
+
+                <div class="room-information">
+
+                    <div>
+
+                        <p class="room-category">
+                            SUITE
+                        </p>
+
+                        <h3>
+                            Suite Jardín
+                        </h3>
+
+                    </div>
+
+
+                    <div class="room-details">
+
+                        <span>Vista al jardín</span>
+                        <span>Área de descanso</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- SUITE PREMIUM -->
+
+            <article class="room reveal">
+
+                <div class="room-image">
+
+                    <img
+                        src="images/suite-premium.jpg"
+                        alt="Suite Premium de Casa Luna"
+                    >
+
+                    <span class="room-number">
+                        03
+                    </span>
+
+                </div>
+
+
+                <div class="room-information">
+
+                    <div>
+
+                        <p class="room-category">
+                            SUITE
+                        </p>
+
+                        <h3>
+                            Suite Premium
+                        </h3>
+
+                    </div>
+
+
+                    <div class="room-details">
+
+                        <span>Experiencia privada</span>
+                        <span>Vista natural</span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================= -->
+<!-- EXPERIENCIA -->
+<!-- ========================================= -->
+
+<section id="experiencia" class="experiencia">
+
+    <div class="experience-heading reveal">
+
+        <p class="subtitulo">
+            LA EXPERIENCIA
+        </p>
+
+
+        <h2>
+            Una estancia
+            <em>para recordar.</em>
+        </h2>
+
+
+        <p>
+            Más que un lugar para dormir,
+            Casa Luna es una invitación a disfrutar
+            de todo lo que rodea la región.
+        </p>
+
+    </div>
+
+
+
+    <div class="experience-list">
+
+
+        <div class="experience-item reveal">
+
+            <span class="experience-number">
+                01
+            </span>
+
+            <h3>
+                Entre viñedos
+            </h3>
+
+            <p>
+                Despierta rodeado de paisajes abiertos,
+                naturaleza y algunos de los viñedos
+                más especiales de Querétaro.
+            </p>
+
+        </div>
+
+
+
+        <div class="experience-item reveal">
+
+            <span class="experience-number">
+                02
+            </span>
+
+            <h3>
+                Sabores locales
+            </h3>
+
+            <p>
+                Descubre vinos, quesos y gastronomía
+                inspirada en los sabores de nuestra región.
+            </p>
+
+        </div>
+
+
+
+        <div class="experience-item reveal">
+
+            <span class="experience-number">
+                03
+            </span>
+
+            <h3>
+                Desconecta
+            </h3>
+
+            <p>
+                Un lugar diseñado para bajar el ritmo,
+                descansar y disfrutar cada momento.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================= -->
+<!-- GALERÍA -->
+<!-- ========================================= -->
+
+<section id="galeria" class="galeria">
+
+    <div class="gallery-heading reveal">
+
+        <p class="subtitulo">
+            CASA LUNA
+        </p>
+
+        <h2>
+            Días lentos.<br>
+            <em>Noches tranquilas.</em>
+        </h2>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+
+        <div class="gallery-image gallery-one reveal">
+
+            <img
+                src="images/galeria-1.jpg"
+                alt="Experiencia Casa Luna"
+            >
+
+        </div>
+
+
+        <div class="gallery-image gallery-two reveal">
+
+            <img
+                src="images/galeria-2.jpg"
+                alt="Viñedos de Querétaro"
+            >
+
+        </div>
+
+
+        <div class="gallery-quote reveal">
+
+            <span>
+                “
+            </span>
+
+            <p>
+                Una pausa entre viñedos,
+                naturaleza y buenos momentos.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-image gallery-three reveal">
+
+            <img
+                src="images/galeria-3.jpg"
+                alt="Estancia Casa Luna"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================= -->
+<!-- UBICACIÓN -->
+<!-- ========================================= -->
+
+<section id="ubicacion" class="ubicacion">
+
+    <div class="location-info reveal">
+
+        <p class="subtitulo">
+            UBICACIÓN
+        </p>
+
+
+        <h2>
+            En el corazón de
+            <em>la ruta del vino.</em>
+        </h2>
+
+
+        <p class="location-description">
+            Casa Luna se encuentra rodeada de
+            viñedos, paisajes abiertos y algunos
+            de los destinos gastronómicos más
+            especiales de Querétaro.
+        </p>
+
+
+        <div class="location-details">
+
+            <div>
+
+                <span>
+                    01
+                </span>
+
+                <p>
+                    Querétaro, México
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    02
+                </span>
+
+                <p>
+                    A 20 min de Tequisquiapan
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    03
+                </span>
+
+                <p>
+                    Cerca de viñedos y queserías
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=Tequisquiapan+Queretaro"
+            target="_blank"
+            class="button button-dark"
+        >
+            Cómo llegar ↗
+        </a>
+
+    </div>
+
+
+
+    <div class="location-map reveal">
+
+        <iframe
+            src="https://www.google.com/maps?q=Tequisquiapan%20Queretaro&output=embed"
+            loading="lazy"
+            allowfullscreen=""
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación Casa Luna"
+        >
+        </iframe>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================= -->
+<!-- RESERVACIONES -->
+<!-- ========================================= -->
+
+<section id="reservar" class="reservar">
+
+    <div class="reservation-content reveal">
+
+        <p class="subtitulo">
+            RESERVACIONES
+        </p>
+
+        <h2>
+            Tu próxima estancia
+            <em>comienza aquí.</em>
+        </h2>
+
+        <p class="reservation-description">
+            Consulta disponibilidad y reserva
+            directamente con Casa Luna por WhatsApp.
+        </p>
+
+
+        <!-- RESERVA POR WHATSAPP -->
+
+        <a
+            href="https://wa.me/524420000000?text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20disponibilidad%20para%20hospedarme%20en%20Casa%20Luna."
+            target="_blank"
+            class="reservation-main-button whatsapp-button"
+        >
+
+            <div class="whatsapp-button-content">
+
+                <!-- LOGO WHATSAPP -->
+
+                <div class="whatsapp-icon">
+
+                    <svg
+                        viewBox="0 0 32 32"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M16.04 2.003A13.94 13.94 0 0 0 4.17 23.25L2 30l6.94-2.1A13.97 13.97 0 1 0 16.04 2.003Zm0 25.46a11.46 11.46 0 0 1-5.84-1.6l-.42-.25-4.12 1.25 1.28-4.01-.27-.43a11.47 11.47 0 1 1 9.37 5.04Zm6.29-8.58c-.34-.17-2.04-1-2.36-1.12-.31-.11-.54-.17-.77.17-.23.35-.89 1.12-1.09 1.35-.2.23-.4.26-.74.09-.35-.17-1.46-.54-2.78-1.72a10.43 10.43 0 0 1-1.93-2.4c-.2-.35-.02-.53.15-.7.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.12-.23.06-.43-.03-.6-.08-.18-.77-1.86-1.06-2.55-.28-.67-.56-.58-.77-.59h-.66c-.23 0-.6.09-.91.43-.32.35-1.2 1.18-1.2 2.87 0 1.7 1.23 3.33 1.4 3.56.17.23 2.42 3.7 5.87 5.19.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.14.66-.1 2.04-.84 2.33-1.64.29-.81.29-1.5.2-1.64-.08-.14-.31-.23-.65-.4Z"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <div class="whatsapp-text">
+
+                    <span>
+                        RESERVA POR WHATSAPP
+                    </span>
+
+                    <strong>
+                        Consultar disponibilidad
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <span class="reservation-arrow">
+                ↗
+            </span>
+
+        </a>
+
+
+        <!-- BOOKING / AIRBNB -->
+
+        <div class="reservation-platforms">
+
+            <p>
+                También puedes encontrarnos en
+            </p>
+
+            <div>
+
+                <a
+                    href="https://www.booking.com/"
+                    target="_blank"
+                >
+                    Booking ↗
+                </a>
+
+                <a
+                    href="https://www.airbnb.com/"
+                    target="_blank"
+                >
+                    Airbnb ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================= -->
+<!-- CONTACTO -->
+<!-- ========================================= -->
+
+<section id="contacto" class="contacto">
+
+    <div class="contact-heading reveal">
+
+        <p class="subtitulo">
+            CONTACTO
+        </p>
+
+        <h2>
+            ¿Listo para
+            <em>desconectar?</em>
+        </h2>
+
+    </div>
+
+
+    <div class="contact-information reveal">
+
+        <div>
+
+            <span>
+                UBICACIÓN
+            </span>
+
+            <p>
+                Querétaro, México
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                TELÉFONO
+            </span>
+
+            <p>
+                +52 442 000 0000
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                EMAIL
+            </span>
+
+            <p>
+                reservaciones@casaluna.com
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <span>
+                SOCIAL
+            </span>
+
+            <p>
+                Instagram ↗
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <a href="#inicio" class="footer-logo">
+            CASA LUNA
+        </a>
+
+
+        <p>
+            Boutique Hotel
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-grid">
+
+
+        <div class="footer-message">
+
+            <p>
+                Una pausa entre
+                viñedos.
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <span>
+                EXPLORA
+            </span>
+
+            <a href="#habitaciones">
+                Habitaciones
+            </a>
+
+            <a href="#experiencia">
+                Experiencia
+            </a>
+
+            <a href="#galeria">
+                Galería
+            </a>
+
+            <a href="#ubicacion">
+                Ubicación
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-column">
+
+            <span>
+                CONTACTO
+            </span>
+
+            <a href="#reservar">
+                Reservaciones
+            </a>
+
+            <a href="#">
+                Instagram ↗
+            </a>
+
+            <a href="#">
+                WhatsApp ↗
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 CASA LUNA
+        </span>
+
+        <span>
+            BOUTIQUE HOTEL · QUERÉTARO
+        </span>
+
+        <a href="#inicio">
+            VOLVER ARRIBA ↑
+        </a>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
 
 </body>
 
